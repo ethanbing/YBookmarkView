@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'YBookmarkView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of YBookmarkView.'
+  s.summary          = 'YBookmarkView 是类似新闻的书签页面形式'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.description      = 'YBookmarkView 是类似新闻的书签页面形式，大部分项目都需要用到，现在贡献出来，方便大家使用方便'
 
-  s.homepage         = 'https://github.com/380711712@qq.com/YBookmarkView'
+  s.homepage         = 'https://github.com/ethanbing/YBookmarkView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ethanbing' => '380711712@qq.com' }
