@@ -9,7 +9,6 @@
 #import "YBookmarkView.h"
 #import "YBookmarkTopView.h"
 #import "YBookmarkBottomView.h"
-//#import "NSObject+PropertyListing.h"
 
 @interface YBookmarkView()<YBookmarkTopViewDelegate,YBookmarkBottomViewDelegate>
 
@@ -41,7 +40,7 @@
 
 - (void)defaultConfig
 {
-    _topMarkHeight = 40;
+    _topMarkHeight = 50;
     _topViewHide = NO;
     _bottomMarkHeight = 0.0;
     _fixedTitleWidth = 0;

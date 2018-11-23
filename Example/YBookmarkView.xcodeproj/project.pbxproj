@@ -24,6 +24,11 @@
 		75E34F3B54731E684214AFB0 /* Pods_YBookmarkView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30384FF3C58CD0571014183 /* Pods_YBookmarkView_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		AEE6FFABE37024D8EAF30922 /* Pods_YBookmarkView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179FE767514AF72D40819679 /* Pods_YBookmarkView_Tests.framework */; };
+		B90129A821A7E54800AF2F75 /* YBBaseTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90129A721A7E54800AF2F75 /* YBBaseTabelViewController.m */; };
+		B90129AB21A7E6F100AF2F75 /* YBFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90129AA21A7E6F100AF2F75 /* YBFirstViewController.m */; };
+		B90129AE21A7E84F00AF2F75 /* YBSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90129AD21A7E84F00AF2F75 /* YBSecondViewController.m */; };
+		B90129B121A7E86300AF2F75 /* YBThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90129B021A7E86300AF2F75 /* YBThirdViewController.m */; };
+		B90129B421A7FA2600AF2F75 /* YBMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90129B321A7FA2600AF2F75 /* YBMoreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +43,9 @@
 
 /* Begin PBXFileReference section */
 		0264D9C33E6F16AF76FFEFC9 /* Pods-YBookmarkView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBookmarkView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YBookmarkView_Tests/Pods-YBookmarkView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		0CBC6FAAFC00AEE6FF11AC13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0CBC6FAAFC00AEE6FF11AC13 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		179FE767514AF72D40819679 /* Pods_YBookmarkView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YBookmarkView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5476B6B6499733DE6AE30EB1 /* YBookmarkView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = YBookmarkView.podspec; path = ../YBookmarkView.podspec; sourceTree = "<group>"; };
+		5476B6B6499733DE6AE30EB1 /* YBookmarkView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YBookmarkView.podspec; path = ../YBookmarkView.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YBookmarkView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YBookmarkView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,10 +68,20 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C90B1641684C538FBE94539 /* Pods-YBookmarkView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBookmarkView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YBookmarkView_Example/Pods-YBookmarkView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B90129A621A7E54800AF2F75 /* YBBaseTabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBBaseTabelViewController.h; sourceTree = "<group>"; };
+		B90129A721A7E54800AF2F75 /* YBBaseTabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBBaseTabelViewController.m; sourceTree = "<group>"; };
+		B90129A921A7E6F100AF2F75 /* YBFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBFirstViewController.h; sourceTree = "<group>"; };
+		B90129AA21A7E6F100AF2F75 /* YBFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBFirstViewController.m; sourceTree = "<group>"; };
+		B90129AC21A7E84F00AF2F75 /* YBSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBSecondViewController.h; sourceTree = "<group>"; };
+		B90129AD21A7E84F00AF2F75 /* YBSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBSecondViewController.m; sourceTree = "<group>"; };
+		B90129AF21A7E86300AF2F75 /* YBThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBThirdViewController.h; sourceTree = "<group>"; };
+		B90129B021A7E86300AF2F75 /* YBThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBThirdViewController.m; sourceTree = "<group>"; };
+		B90129B221A7FA2600AF2F75 /* YBMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YBMoreViewController.h; sourceTree = "<group>"; };
+		B90129B321A7FA2600AF2F75 /* YBMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YBMoreViewController.m; sourceTree = "<group>"; };
 		C8285A33C7A59AB2F860092D /* Pods-YBookmarkView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBookmarkView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YBookmarkView_Example/Pods-YBookmarkView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E30384FF3C58CD0571014183 /* Pods_YBookmarkView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YBookmarkView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A74104E9D142E02F81FBF7 /* Pods-YBookmarkView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YBookmarkView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YBookmarkView_Tests/Pods-YBookmarkView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		FBC07B7FC0CF97C3A2711C50 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FBC07B7FC0CF97C3A2711C50 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +147,13 @@
 		6003F593195388D20070C39A /* Example for YBookmarkView */ = {
 			isa = PBXGroup;
 			children = (
+				B90129A521A7E52C00AF2F75 /* BaseViewController */,
+				B90129A421A7E4FA00AF2F75 /* SubViewController */,
 				6003F59C195388D20070C39A /* YBAppDelegate.h */,
 				6003F59D195388D20070C39A /* YBAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* YBViewController.h */,
 				6003F5A6195388D20070C39A /* YBViewController.m */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -196,6 +213,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B90129A421A7E4FA00AF2F75 /* SubViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B90129A921A7E6F100AF2F75 /* YBFirstViewController.h */,
+				B90129AA21A7E6F100AF2F75 /* YBFirstViewController.m */,
+				B90129AC21A7E84F00AF2F75 /* YBSecondViewController.h */,
+				B90129AD21A7E84F00AF2F75 /* YBSecondViewController.m */,
+				B90129AF21A7E86300AF2F75 /* YBThirdViewController.h */,
+				B90129B021A7E86300AF2F75 /* YBThirdViewController.m */,
+				B90129B221A7FA2600AF2F75 /* YBMoreViewController.h */,
+				B90129B321A7FA2600AF2F75 /* YBMoreViewController.m */,
+			);
+			name = SubViewController;
+			sourceTree = "<group>";
+		};
+		B90129A521A7E52C00AF2F75 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B90129A621A7E54800AF2F75 /* YBBaseTabelViewController.h */,
+				B90129A721A7E54800AF2F75 /* YBBaseTabelViewController.m */,
+			);
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +288,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "380711712@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = XQXQPB7PG5;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -370,6 +415,11 @@
 				6003F59E195388D20070C39A /* YBAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* YBViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				B90129AE21A7E84F00AF2F75 /* YBSecondViewController.m in Sources */,
+				B90129AB21A7E6F100AF2F75 /* YBFirstViewController.m in Sources */,
+				B90129B121A7E86300AF2F75 /* YBThirdViewController.m in Sources */,
+				B90129B421A7FA2600AF2F75 /* YBMoreViewController.m in Sources */,
+				B90129A821A7E54800AF2F75 /* YBBaseTabelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,12 +547,15 @@
 			baseConfigurationReference = 8C90B1641684C538FBE94539 /* Pods-YBookmarkView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XQXQPB7PG5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YBookmarkView/YBookmarkView-Prefix.pch";
 				INFOPLIST_FILE = "YBookmarkView/YBookmarkView-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YBookmarkView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Gen_dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -512,12 +565,15 @@
 			baseConfigurationReference = C8285A33C7A59AB2F860092D /* Pods-YBookmarkView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YBookmarkView/YBookmarkView-Prefix.pch";
 				INFOPLIST_FILE = "YBookmarkView/YBookmarkView-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YBookmarkView-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

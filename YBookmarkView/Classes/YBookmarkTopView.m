@@ -140,7 +140,6 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * title = [self.dataArray objectAtIndex:indexPath.item];
-    NSLog(@"titleGridView--->%@",title);
     CGFloat sw = [self _widthWithString:title font:self.titleSelectFont];
     CGFloat w = [self.delegate bookmarkTopView:self title:title width:sw];
     return CGSizeMake(w, CGRectGetHeight(self.bounds));

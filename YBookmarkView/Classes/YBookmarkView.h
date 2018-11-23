@@ -122,7 +122,8 @@
 @property (nonatomic, assign) CGFloat topViewLineHeight;
 @property (nonatomic, strong) UIColor * topViewBottomLineColor;
 @property (nonatomic, strong) UIFont * titleSelectFont;
-/** 映射titleCell */
+
+/** 映射titleCell 就是继承YBookmarkTitleCell 的类名 */
 @property (nonatomic, copy) NSString * actualTitleCell;
 @property (nonatomic, strong) UIImage * topShadowImage;
 
