@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'YBookmarkView_Example' do
+  pod 'YBookmarkView', :path => '../'
+
+  target 'YBookmarkView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
