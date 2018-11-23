@@ -1,0 +1,16 @@
+PODS:
+  - YBookmarkView (0.1.0)
+
+DEPENDENCIES:
+  - YBookmarkView (from `../`)
+
+EXTERNAL SOURCES:
+  YBookmarkView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YBookmarkView: 3e5c7d68ca7d5d307faca68a85d56a4240ddef4e
+
+PODFILE CHECKSUM: 27b55b44a677f23bdfab1cc8be3c4e5b78c1d588
+
+COCOAPODS: 1.5.3

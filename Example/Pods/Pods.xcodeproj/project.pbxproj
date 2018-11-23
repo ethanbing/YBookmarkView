@@ -1,0 +1,804 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		157456AAB062D2AC7A928DDF155A5715 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		238485DB316B7639B55EC06D9A097D8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		56E29ECFC7B37EBDA10DE4D97F233016 /* YBookmarkView.h in Headers */ = {isa = PBXBuildFile; fileRef = CCEA325D495AFE04391B680D27C425A0 /* YBookmarkView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C1A1E1C49AECF2A51984B98C19834E7 /* Pods-YBookmarkView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F6FEABCE238BF50E6BF5FF25071BA53 /* Pods-YBookmarkView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72A763A99536D8914A1D80AA9373B5C5 /* YBookmarkContentCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A06B1B698C154B450B85E3F708F17EFD /* YBookmarkContentCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78275918EBC9562719A76E18BBC6C365 /* Pods-YBookmarkView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F9DEC857E64CCFC99AD3A4ABA167E /* Pods-YBookmarkView_Tests-dummy.m */; };
+		7B0C1769C8A21DCCFE60B53F0FD912C8 /* YBookmarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 271BDF0C44CC84EA871FA0DC64992BF5 /* YBookmarkView.m */; };
+		8563B12F92311930A2B741CE1F4366FF /* YBookmarkTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7548FD75CFA9EDE40E96B1FFD0D60F4 /* YBookmarkTopView.m */; };
+		9CBD1171F944B39353EAA7FCB48C6A97 /* YBookmarkTopView.h in Headers */ = {isa = PBXBuildFile; fileRef = B7D835881639C866C1318CFFEF7A4F1F /* YBookmarkTopView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B292DD8610CC57CD09DEC0E29CFCE335 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		B9ADB9C35565A0C7B7A2EF702C8592ED /* YBookmarkBottomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 95151B878A2A4470577744652CE03A22 /* YBookmarkBottomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6B10EA36187DDD3957B6A7BEAC2BAC5 /* YBookmarkContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4A7A165B8A14A66F168EE2584905E3 /* YBookmarkContentCell.m */; };
+		C8C794A9B8AEF3A7F1ACD52DA6D98FA1 /* Pods-YBookmarkView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B04A698E115E00F6CE5E938100AE773D /* Pods-YBookmarkView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D82DBBB1D4445348BB3EBCF97698FE1C /* YBookmarkView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2465C3EC8D3E3FFC5BE00B7BA57D9A0 /* YBookmarkView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E905BE07D24E53AEF8A8EA619E951283 /* Pods-YBookmarkView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E9A49B0473FA1CAA00299BE421056B /* Pods-YBookmarkView_Example-dummy.m */; };
+		E97480135B52DD97E63164700704E5C7 /* YBookmarkView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A759C6C408626D0C51A349F9321038 /* YBookmarkView-dummy.m */; };
+		EEDE1D96D238B9D630127387E68ABDDA /* YBookmarkBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1878523DB42229F9495CDD1FDF10961D /* YBookmarkBottomView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C109F937CB36D2179B7144993D1F268 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F88EA9EB3B2D730463FF8B88754A3E06;
+			remoteInfo = "Pods-YBookmarkView_Example";
+		};
+		B2E59325E56AA2045228B9723DACE400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 969B6A50E7CACF7CCCDFD124A16C2251;
+			remoteInfo = YBookmarkView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C7D4FFE04FDD0519B0DF3D818B233F0 /* YBookmarkView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YBookmarkView.modulemap; sourceTree = "<group>"; };
+		1878523DB42229F9495CDD1FDF10961D /* YBookmarkBottomView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YBookmarkBottomView.m; path = YBookmarkView/Classes/YBookmarkBottomView.m; sourceTree = "<group>"; };
+		1DA0D374FE5486AE5941D58B69EB3E57 /* Pods-YBookmarkView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YBookmarkView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		1DB6B926B7C4CE5A83029B4E7970841A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F556DB7BF7E3B40F0E49312098AA0DA /* Pods_YBookmarkView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YBookmarkView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		214F9DEC857E64CCFC99AD3A4ABA167E /* Pods-YBookmarkView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YBookmarkView_Tests-dummy.m"; sourceTree = "<group>"; };
+		271BDF0C44CC84EA871FA0DC64992BF5 /* YBookmarkView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YBookmarkView.m; path = YBookmarkView/Classes/YBookmarkView.m; sourceTree = "<group>"; };
+		28AE323637EE3F50870A663318FFF62C /* Pods-YBookmarkView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YBookmarkView_Example.modulemap"; sourceTree = "<group>"; };
+		2BE4F51C1442D35FBCFB1B9EB6403C48 /* YBookmarkView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = YBookmarkView.podspec; sourceTree = "<group>"; };
+		38E9A49B0473FA1CAA00299BE421056B /* Pods-YBookmarkView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YBookmarkView_Example-dummy.m"; sourceTree = "<group>"; };
+		3F8C4A6313C75F83D49AA03391C90841 /* Pods-YBookmarkView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YBookmarkView_Tests.modulemap"; sourceTree = "<group>"; };
+		46A674E961E5B739BE6C17C7D947F72A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E337E2827AA3419715A0191FC267686 /* YBookmarkView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YBookmarkView-prefix.pch"; sourceTree = "<group>"; };
+		4F79CFE941C9771DAE5C682A3627731D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		50D9AA6FA2D79BB7BF32CC000E7D3DE8 /* Pods-YBookmarkView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YBookmarkView_Example-resources.sh"; sourceTree = "<group>"; };
+		60CA156E805C3C516ADAB4F1C3EC8AAA /* Pods-YBookmarkView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YBookmarkView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6148358BDB504179DA390CB8FF28C241 /* Pods-YBookmarkView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YBookmarkView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		8F6FEABCE238BF50E6BF5FF25071BA53 /* Pods-YBookmarkView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YBookmarkView_Example-umbrella.h"; sourceTree = "<group>"; };
+		939748FE0FE7939DDA9359E315617EE2 /* Pods-YBookmarkView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YBookmarkView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95151B878A2A4470577744652CE03A22 /* YBookmarkBottomView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YBookmarkBottomView.h; path = YBookmarkView/Classes/YBookmarkBottomView.h; sourceTree = "<group>"; };
+		987A008DEAE7815A963CF494384A7EB5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9A8F616971F6BB56F3219F3E7B1E33E0 /* Pods-YBookmarkView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YBookmarkView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B2540372A249110A1BBE67A8123A413 /* Pods_YBookmarkView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YBookmarkView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06B1B698C154B450B85E3F708F17EFD /* YBookmarkContentCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YBookmarkContentCell.h; path = YBookmarkView/Classes/YBookmarkContentCell.h; sourceTree = "<group>"; };
+		A6393A3859978A6D04CCACBACD62B2FA /* Pods-YBookmarkView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YBookmarkView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B04A698E115E00F6CE5E938100AE773D /* Pods-YBookmarkView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YBookmarkView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B46B93CDF8E0E0C2F61097EC1927CB4B /* Pods-YBookmarkView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YBookmarkView_Tests-resources.sh"; sourceTree = "<group>"; };
+		B7D835881639C866C1318CFFEF7A4F1F /* YBookmarkTopView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YBookmarkTopView.h; path = YBookmarkView/Classes/YBookmarkTopView.h; sourceTree = "<group>"; };
+		BA365A58A51692DB5904B8FD4AF7B6BC /* Pods-YBookmarkView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YBookmarkView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C2465C3EC8D3E3FFC5BE00B7BA57D9A0 /* YBookmarkView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YBookmarkView-umbrella.h"; sourceTree = "<group>"; };
+		C52DB91382E89B112BD0CE316DF768F2 /* Pods-YBookmarkView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YBookmarkView_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		CCEA325D495AFE04391B680D27C425A0 /* YBookmarkView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YBookmarkView.h; path = YBookmarkView/Classes/YBookmarkView.h; sourceTree = "<group>"; };
+		CE26AD98D040FC76BF04BACBF12B4810 /* YBookmarkView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YBookmarkView.xcconfig; sourceTree = "<group>"; };
+		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D7B23922267FE8BA683D7F3AF187E8EF /* YBookmarkView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YBookmarkView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC4A7A165B8A14A66F168EE2584905E3 /* YBookmarkContentCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YBookmarkContentCell.m; path = YBookmarkView/Classes/YBookmarkContentCell.m; sourceTree = "<group>"; };
+		DD25FB6F18728D930E215A1887F94B91 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F07A95C50AEABD3946A7F0491189400B /* Pods-YBookmarkView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YBookmarkView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F6A759C6C408626D0C51A349F9321038 /* YBookmarkView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YBookmarkView-dummy.m"; sourceTree = "<group>"; };
+		F7548FD75CFA9EDE40E96B1FFD0D60F4 /* YBookmarkTopView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YBookmarkTopView.m; path = YBookmarkView/Classes/YBookmarkTopView.m; sourceTree = "<group>"; };
+		F947E141C0CEDB5300889E1B1488BCAE /* Pods-YBookmarkView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YBookmarkView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0EA18143E1DAC57B3DB4C7DB000D80F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				238485DB316B7639B55EC06D9A097D8F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43B1CCC742549232ADF47875085CACD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B292DD8610CC57CD09DEC0E29CFCE335 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5523CF2C1EEBFD24161C6272F1DB25B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				157456AAB062D2AC7A928DDF155A5715 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CBAE0DC0982563C8CC3263E24A17C6F /* Pods-YBookmarkView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DD25FB6F18728D930E215A1887F94B91 /* Info.plist */,
+				3F8C4A6313C75F83D49AA03391C90841 /* Pods-YBookmarkView_Tests.modulemap */,
+				F947E141C0CEDB5300889E1B1488BCAE /* Pods-YBookmarkView_Tests-acknowledgements.markdown */,
+				A6393A3859978A6D04CCACBACD62B2FA /* Pods-YBookmarkView_Tests-acknowledgements.plist */,
+				214F9DEC857E64CCFC99AD3A4ABA167E /* Pods-YBookmarkView_Tests-dummy.m */,
+				C52DB91382E89B112BD0CE316DF768F2 /* Pods-YBookmarkView_Tests-frameworks.sh */,
+				B46B93CDF8E0E0C2F61097EC1927CB4B /* Pods-YBookmarkView_Tests-resources.sh */,
+				B04A698E115E00F6CE5E938100AE773D /* Pods-YBookmarkView_Tests-umbrella.h */,
+				9A8F616971F6BB56F3219F3E7B1E33E0 /* Pods-YBookmarkView_Tests.debug.xcconfig */,
+				6148358BDB504179DA390CB8FF28C241 /* Pods-YBookmarkView_Tests.release.xcconfig */,
+			);
+			name = "Pods-YBookmarkView_Tests";
+			path = "Target Support Files/Pods-YBookmarkView_Tests";
+			sourceTree = "<group>";
+		};
+		37053D3BDD92633FE97DCA4FFF9498B0 /* Pods-YBookmarkView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				46A674E961E5B739BE6C17C7D947F72A /* Info.plist */,
+				28AE323637EE3F50870A663318FFF62C /* Pods-YBookmarkView_Example.modulemap */,
+				BA365A58A51692DB5904B8FD4AF7B6BC /* Pods-YBookmarkView_Example-acknowledgements.markdown */,
+				F07A95C50AEABD3946A7F0491189400B /* Pods-YBookmarkView_Example-acknowledgements.plist */,
+				38E9A49B0473FA1CAA00299BE421056B /* Pods-YBookmarkView_Example-dummy.m */,
+				939748FE0FE7939DDA9359E315617EE2 /* Pods-YBookmarkView_Example-frameworks.sh */,
+				50D9AA6FA2D79BB7BF32CC000E7D3DE8 /* Pods-YBookmarkView_Example-resources.sh */,
+				8F6FEABCE238BF50E6BF5FF25071BA53 /* Pods-YBookmarkView_Example-umbrella.h */,
+				1DA0D374FE5486AE5941D58B69EB3E57 /* Pods-YBookmarkView_Example.debug.xcconfig */,
+				60CA156E805C3C516ADAB4F1C3EC8AAA /* Pods-YBookmarkView_Example.release.xcconfig */,
+			);
+			name = "Pods-YBookmarkView_Example";
+			path = "Target Support Files/Pods-YBookmarkView_Example";
+			sourceTree = "<group>";
+		};
+		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		60B8632C0EC069676906AD463F927E29 /* YBookmarkView */ = {
+			isa = PBXGroup;
+			children = (
+				CCEA325D495AFE04391B680D27C425A0 /* YBookmarkView.h */,
+				271BDF0C44CC84EA871FA0DC64992BF5 /* YBookmarkView.m */,
+				95151B878A2A4470577744652CE03A22 /* YBookmarkBottomView.h */,
+				1878523DB42229F9495CDD1FDF10961D /* YBookmarkBottomView.m */,
+				A06B1B698C154B450B85E3F708F17EFD /* YBookmarkContentCell.h */,
+				DC4A7A165B8A14A66F168EE2584905E3 /* YBookmarkContentCell.m */,
+				B7D835881639C866C1318CFFEF7A4F1F /* YBookmarkTopView.h */,
+				F7548FD75CFA9EDE40E96B1FFD0D60F4 /* YBookmarkTopView.m */,
+				B86A78D46065030F71FB984A8479290A /* Pod */,
+				798F9C115E4C048839DD919D4A7692E4 /* Support Files */,
+			);
+			name = YBookmarkView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		798F9C115E4C048839DD919D4A7692E4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1DB6B926B7C4CE5A83029B4E7970841A /* Info.plist */,
+				0C7D4FFE04FDD0519B0DF3D818B233F0 /* YBookmarkView.modulemap */,
+				CE26AD98D040FC76BF04BACBF12B4810 /* YBookmarkView.xcconfig */,
+				F6A759C6C408626D0C51A349F9321038 /* YBookmarkView-dummy.m */,
+				4E337E2827AA3419715A0191FC267686 /* YBookmarkView-prefix.pch */,
+				C2465C3EC8D3E3FFC5BE00B7BA57D9A0 /* YBookmarkView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/YBookmarkView";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BDD0CD384B5E922C892E2D8E00323A7C /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				ED53BCD9E56C7560FAE9EDAB7501F66A /* Products */,
+				D2AECC800DE67FA8B7C354514974C33F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B86A78D46065030F71FB984A8479290A /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				987A008DEAE7815A963CF494384A7EB5 /* LICENSE */,
+				4F79CFE941C9771DAE5C682A3627731D /* README.md */,
+				2BE4F51C1442D35FBCFB1B9EB6403C48 /* YBookmarkView.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44D5347904CF754D6785B84253F2574A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDD0CD384B5E922C892E2D8E00323A7C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60B8632C0EC069676906AD463F927E29 /* YBookmarkView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D2AECC800DE67FA8B7C354514974C33F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				37053D3BDD92633FE97DCA4FFF9498B0 /* Pods-YBookmarkView_Example */,
+				1CBAE0DC0982563C8CC3263E24A17C6F /* Pods-YBookmarkView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		ED53BCD9E56C7560FAE9EDAB7501F66A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B2540372A249110A1BBE67A8123A413 /* Pods_YBookmarkView_Example.framework */,
+				1F556DB7BF7E3B40F0E49312098AA0DA /* Pods_YBookmarkView_Tests.framework */,
+				D7B23922267FE8BA683D7F3AF187E8EF /* YBookmarkView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		195EE96C1A5C3E1CA601DEBBB830F12D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9ADB9C35565A0C7B7A2EF702C8592ED /* YBookmarkBottomView.h in Headers */,
+				72A763A99536D8914A1D80AA9373B5C5 /* YBookmarkContentCell.h in Headers */,
+				9CBD1171F944B39353EAA7FCB48C6A97 /* YBookmarkTopView.h in Headers */,
+				D82DBBB1D4445348BB3EBCF97698FE1C /* YBookmarkView-umbrella.h in Headers */,
+				56E29ECFC7B37EBDA10DE4D97F233016 /* YBookmarkView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		492637C6C1BF25F4F14135B0EF19D2A7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8C794A9B8AEF3A7F1ACD52DA6D98FA1 /* Pods-YBookmarkView_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71AC08DEFA4F712E7224073C13520870 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1A1E1C49AECF2A51984B98C19834E7 /* Pods-YBookmarkView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		170213CDB04CBFEB6C37D40446D7FCAB /* Pods-YBookmarkView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D93488B9111BC06FC7EE9821F5103344 /* Build configuration list for PBXNativeTarget "Pods-YBookmarkView_Tests" */;
+			buildPhases = (
+				492637C6C1BF25F4F14135B0EF19D2A7 /* Headers */,
+				0CF168A292090A8A2D4150FF8DCB71A3 /* Sources */,
+				43B1CCC742549232ADF47875085CACD1 /* Frameworks */,
+				A8E819D14D27F0954CE6E9EA01A687AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D90AE8244DBA6FBFF728A027687C7DE2 /* PBXTargetDependency */,
+			);
+			name = "Pods-YBookmarkView_Tests";
+			productName = "Pods-YBookmarkView_Tests";
+			productReference = 1F556DB7BF7E3B40F0E49312098AA0DA /* Pods_YBookmarkView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		969B6A50E7CACF7CCCDFD124A16C2251 /* YBookmarkView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D899F3DBD5BCDC80260896573B7145F /* Build configuration list for PBXNativeTarget "YBookmarkView" */;
+			buildPhases = (
+				195EE96C1A5C3E1CA601DEBBB830F12D /* Headers */,
+				738557D4353484CB77F92DB3DC6ACEE4 /* Sources */,
+				0EA18143E1DAC57B3DB4C7DB000D80F1 /* Frameworks */,
+				819B785EDD233D081E64408ECBEABA04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YBookmarkView;
+			productName = YBookmarkView;
+			productReference = D7B23922267FE8BA683D7F3AF187E8EF /* YBookmarkView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F88EA9EB3B2D730463FF8B88754A3E06 /* Pods-YBookmarkView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F00DC2D29524614E5EADF506FB1B29CA /* Build configuration list for PBXNativeTarget "Pods-YBookmarkView_Example" */;
+			buildPhases = (
+				71AC08DEFA4F712E7224073C13520870 /* Headers */,
+				15819F086CE5D37D3638A0E8A93EBCB0 /* Sources */,
+				5523CF2C1EEBFD24161C6272F1DB25B4 /* Frameworks */,
+				2DBC888B6E6AE572D88C74C6454E888D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B08BCC1FA146A43EE1B4254124AAFAE /* PBXTargetDependency */,
+			);
+			name = "Pods-YBookmarkView_Example";
+			productName = "Pods-YBookmarkView_Example";
+			productReference = 9B2540372A249110A1BBE67A8123A413 /* Pods_YBookmarkView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ED53BCD9E56C7560FAE9EDAB7501F66A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F88EA9EB3B2D730463FF8B88754A3E06 /* Pods-YBookmarkView_Example */,
+				170213CDB04CBFEB6C37D40446D7FCAB /* Pods-YBookmarkView_Tests */,
+				969B6A50E7CACF7CCCDFD124A16C2251 /* YBookmarkView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DBC888B6E6AE572D88C74C6454E888D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		819B785EDD233D081E64408ECBEABA04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E819D14D27F0954CE6E9EA01A687AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0CF168A292090A8A2D4150FF8DCB71A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78275918EBC9562719A76E18BBC6C365 /* Pods-YBookmarkView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15819F086CE5D37D3638A0E8A93EBCB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E905BE07D24E53AEF8A8EA619E951283 /* Pods-YBookmarkView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		738557D4353484CB77F92DB3DC6ACEE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDE1D96D238B9D630127387E68ABDDA /* YBookmarkBottomView.m in Sources */,
+				C6B10EA36187DDD3957B6A7BEAC2BAC5 /* YBookmarkContentCell.m in Sources */,
+				8563B12F92311930A2B741CE1F4366FF /* YBookmarkTopView.m in Sources */,
+				E97480135B52DD97E63164700704E5C7 /* YBookmarkView-dummy.m in Sources */,
+				7B0C1769C8A21DCCFE60B53F0FD912C8 /* YBookmarkView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B08BCC1FA146A43EE1B4254124AAFAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YBookmarkView;
+			target = 969B6A50E7CACF7CCCDFD124A16C2251 /* YBookmarkView */;
+			targetProxy = B2E59325E56AA2045228B9723DACE400 /* PBXContainerItemProxy */;
+		};
+		D90AE8244DBA6FBFF728A027687C7DE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-YBookmarkView_Example";
+			target = F88EA9EB3B2D730463FF8B88754A3E06 /* Pods-YBookmarkView_Example */;
+			targetProxy = 9C109F937CB36D2179B7144993D1F268 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		44C29FF6FCEA422431F4E79DAC93BFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60CA156E805C3C516ADAB4F1C3EC8AAA /* Pods-YBookmarkView_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YBookmarkView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YBookmarkView_Example/Pods-YBookmarkView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50646285DD9FD95AF390BDA3FB1948EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		58DCB2BA7C34E84C00C38CEF18A96D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		5E04B35D14504E92284E76C14BC68A6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6148358BDB504179DA390CB8FF28C241 /* Pods-YBookmarkView_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YBookmarkView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YBookmarkView_Tests/Pods-YBookmarkView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E041488C231AE795F10FD7D2386F303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE26AD98D040FC76BF04BACBF12B4810 /* YBookmarkView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YBookmarkView/YBookmarkView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YBookmarkView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YBookmarkView/YBookmarkView.modulemap";
+				PRODUCT_MODULE_NAME = YBookmarkView;
+				PRODUCT_NAME = YBookmarkView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DC4FB0694FDCAC17DCA16002D28A16C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A8F616971F6BB56F3219F3E7B1E33E0 /* Pods-YBookmarkView_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YBookmarkView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YBookmarkView_Tests/Pods-YBookmarkView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C75CCBA88820B4770A763D5C75651CD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DA0D374FE5486AE5941D58B69EB3E57 /* Pods-YBookmarkView_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YBookmarkView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YBookmarkView_Example/Pods-YBookmarkView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F01002F9ECBC4DB7A4CAF277FC0088E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE26AD98D040FC76BF04BACBF12B4810 /* YBookmarkView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YBookmarkView/YBookmarkView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YBookmarkView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/YBookmarkView/YBookmarkView.modulemap";
+				PRODUCT_MODULE_NAME = YBookmarkView;
+				PRODUCT_NAME = YBookmarkView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50646285DD9FD95AF390BDA3FB1948EA /* Debug */,
+				58DCB2BA7C34E84C00C38CEF18A96D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D899F3DBD5BCDC80260896573B7145F /* Build configuration list for PBXNativeTarget "YBookmarkView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E041488C231AE795F10FD7D2386F303 /* Debug */,
+				F01002F9ECBC4DB7A4CAF277FC0088E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D93488B9111BC06FC7EE9821F5103344 /* Build configuration list for PBXNativeTarget "Pods-YBookmarkView_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DC4FB0694FDCAC17DCA16002D28A16C /* Debug */,
+				5E04B35D14504E92284E76C14BC68A6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F00DC2D29524614E5EADF506FB1B29CA /* Build configuration list for PBXNativeTarget "Pods-YBookmarkView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C75CCBA88820B4770A763D5C75651CD2 /* Debug */,
+				44C29FF6FCEA422431F4E79DAC93BFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
