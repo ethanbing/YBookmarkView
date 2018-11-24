@@ -61,16 +61,18 @@
 
 @optional
 
+//** 点击 title 回调 */
 - (void)bookMarkView:(YBookmarkView *)bookMarkView didSelectTitleAtIndex:(NSInteger)index;
+//** 滚动到第几个标签回调 */
 - (void)bookMarkView:(YBookmarkView *)bookMarkView didScrollToIndex:(NSInteger)index;
-//** bottomMark 滑动结束*/
+//** bottomMark 滑动结束 回调*/
 - (void)bookMarkView:(YBookmarkView *)bookMarkView didEndDecelerating:(NSInteger)index;
 - (void)bookMarkView:(YBookmarkView *)bookMarkView updateLayoutIndex:(NSInteger)index viewController:(UIViewController *)vc;
-//** bottomMark 将要显示*/
+//** bottomMark 将要显示 回调*/
 - (void)bookMarkView:(YBookmarkView *)bookMarkView bottomMarkWillDisplayCell:(UICollectionViewCell *)cell atIndex:(NSInteger)index;
-//** bottomMark 将要显示vc*/
+//** 第index个子控制器 将要显示 回调*/
 - (void)bookMarkView:(YBookmarkView *)bookMarkView willDisplayingVC:(__kindof UIViewController *)vc index:(NSInteger)index;
-//** bottomMark 结束显示vc*/
+//** 第index个子控制 结束显示 回调*/
 - (void)bookMarkView:(YBookmarkView *)bookMarkView didEndDisplayingVC:(__kindof UIViewController *)vc index:(NSInteger)index;
 
 @end

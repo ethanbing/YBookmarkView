@@ -95,9 +95,8 @@
         _bookmarkView.delegate = self;
         _bookmarkView.topMarkHeight = 50;
         _bookmarkView.titleSelectFont = [UIFont systemFontOfSize:17];
-//        _bookmarkView.fixedTitleWidth = 100; //如果标题固定宽度设置
+//        _bookmarkView.fixedTitleWidth = 100; //如果标题是固定宽度设置
         //还有很多参数可以设置，自己体会吧 😊
-        
     }
     return _bookmarkView;
 }
