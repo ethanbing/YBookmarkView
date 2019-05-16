@@ -7,6 +7,7 @@
 //
 
 #import "YBMoreViewController.h"
+#import "Masonry.h"
 
 @interface YBMoreViewController ()
 
@@ -27,6 +28,11 @@
     self.view.backgroundColor = [UIColor colorWithRed:self.arandom green:self.arandom blue:self.arandom alpha:1];
     [self.view addSubview:self.label];
     self.label.text = [NSString stringWithFormat:@"第 %d 页面",(int)self.index];
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+        make.height.mas_equalTo(30);
+    }];
 }
 
 - (CGFloat)arandom

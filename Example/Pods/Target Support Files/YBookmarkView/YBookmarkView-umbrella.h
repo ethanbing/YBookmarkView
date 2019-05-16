@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "YBBookMarkConfig.h"
 #import "YBookmarkBottomView.h"
 #import "YBookmarkContentCell.h"
 #import "YBookmarkTopView.h"

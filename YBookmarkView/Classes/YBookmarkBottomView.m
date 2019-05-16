@@ -8,6 +8,7 @@
 
 #import "YBookmarkBottomView.h"
 #import "YBookmarkContentCell.h"
+#import "Masonry.h"
 
 @interface YBookmarkBottomView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -31,6 +32,9 @@
 {
     [self addSubview:self.contentGridView];
     [self.contentGridView registerClass:YBookmarkContentCell.class forCellWithReuseIdentifier:self.bookmarkBottomCellIdentifier];
+    [self.contentGridView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
 }
 
 - (NSString *)bookmarkBottomCellIdentifier
@@ -128,6 +132,19 @@
     }
 }
 
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGFloat x = CGRectGetWidth(self.bounds) * self.currentIndex;
+        CGPoint p = CGPointMake(x, 0);
+        [self.contentGridView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.contentGridView setContentOffset:p];
+        });
+    });
+}
+
 - (UICollectionView *)contentGridView
 {
     if (!_contentGridView) {
@@ -136,13 +153,12 @@
         flow.minimumInteritemSpacing = 0.0;
         flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _contentGridView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flow];
-        _contentGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _contentGridView.showsHorizontalScrollIndicator = NO;
         _contentGridView.pagingEnabled = YES;
         _contentGridView.scrollsToTop = NO;
         _contentGridView.directionalLockEnabled = YES;
         _contentGridView.contentMode = UIViewContentModeTop;
-        _contentGridView.backgroundColor = [UIColor whiteColor];
+        _contentGridView.backgroundColor = [UIColor clearColor];
         _contentGridView.delegate = self;
         _contentGridView.dataSource = self;
         if (@available(iOS 11.0, *)) {

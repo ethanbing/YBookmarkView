@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class YBBookMarkConfig;
 @interface YBookmarkContentCell : UICollectionViewCell
 
 //@property (nonatomic, strong, readonly) UIViewController *cellVC;
@@ -20,14 +21,7 @@
 @interface YBookmarkTitleCell : UICollectionViewCell
 
 @property (nonatomic, strong) UILabel *titleLabel;
-/** *  标题颜色*/
-@property (nonatomic) UIColor * titleColor;
-/** *  标题选中颜色*/
-@property (nonatomic) UIColor * titleSelectColor;
 
-@property (nonatomic) UIColor * topViewSidelineColor;
-
-@property (nonatomic, strong) UIFont * titleLabelFont;
-@property (nonatomic, strong) UIFont * titleSelectFont;
+@property (nonatomic, strong) YBBookMarkConfig *configItem;
 
 @end

@@ -9,6 +9,7 @@
 #import "YBookmarkView.h"
 #import "YBookmarkTopView.h"
 #import "YBookmarkBottomView.h"
+#import "Masonry.h"
 
 @interface YBookmarkView()<YBookmarkTopViewDelegate,YBookmarkBottomViewDelegate>
 
@@ -16,6 +17,8 @@
 @property (nonatomic, strong) NSMutableArray * titleArray;
 @property (nonatomic, strong) UIView * lineView;
 @property (nonatomic, weak) UIViewController *topVC;
+@property (nonatomic, assign) BOOL isConfigUI;
+@property (nonatomic, strong) YBBookMarkConfig *configItem;
 
 @end
 
@@ -33,62 +36,48 @@
 
 - (void)setupContent
 {
-    [self defaultConfig];
+    _isConfigUI = NO;
+    self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.bottomView];
     [self addSubview:self.topView];
 }
 
-- (void)defaultConfig
+- (void)configMake:(void(^)(YBBookMarkConfig * config))block
 {
-    _topMarkHeight = 50;
-    _topViewHide = NO;
-    _bottomMarkHeight = 0.0;
-    _fixedTitleWidth = 0;
-    _maxTitleWidth = 0;
-    _topViewInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    _titleLabelFont = [UIFont systemFontOfSize:15.0];
-    _topMarkInset = UIEdgeInsetsMake(0, 10, 0, 10);
-    _topMarkCellInset = UIEdgeInsetsMake(0, 10, 0, 10);
-    _titleSpacingSize = CGSizeMake(10, 10);
-    _titleColor = [UIColor blackColor];
-    _titleSelectColor = [UIColor redColor];
-//    CGFloat minL = (1.0/[UIScreen mainScreen].scale);
-    _topViewSidelineSize = CGSizeMake(0, 1);
-    _topViewBottomLineColor = [UIColor lightGrayColor];
-    _topViewLineHeight = 0.5;
-    _topMarkBGColor = [UIColor whiteColor];
-    _topMarkScrollEnabled = YES;
-    _bottomMarkScrollEnabled = YES;
-    _topViewSidelineColor = [UIColor redColor];
-    _titleSelectFont = _titleLabelFont;
+    if (block) {
+        block(self.configItem);
+    }
 }
 
-- (void)setTopMarkScrollEnabled:(BOOL)topMarkScrollEnabled
+- (void)firstConfigUI
 {
-    _topMarkScrollEnabled = topMarkScrollEnabled;
-    _topView.titleGridView.scrollEnabled = topMarkScrollEnabled;
-}
-
-- (void)setBottomMarkScrollEnabled:(BOOL)bottomMarkScrollEnabled
-{
-    _bottomMarkScrollEnabled = bottomMarkScrollEnabled;
-    _bottomView.contentGridView.scrollEnabled = bottomMarkScrollEnabled;
-}
-
-- (void)setTitleLabelFont:(UIFont *)titleLabelFont
-{
-    _titleLabelFont = titleLabelFont;
-    _titleSelectFont = titleLabelFont;
+    if (_isConfigUI) {
+        return;
+    }
+    _isConfigUI = YES;
+    _topView.titleGridView.scrollEnabled = self.configItem.topMarkScrollEnabled;
+    _bottomView.contentGridView.scrollEnabled = self.configItem.bottomMarkScrollEnabled;
+    
+    [self.topView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(self.configItem.topViewHeight);
+    }];
+    [self.bottomView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topView.mas_bottom);
+        make.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+    }];
+    [self.topView performSelector:@selector(configViewUI)];
 }
 
 - (void)reloadData
 {
+    [self firstConfigUI];
     [self reloadDataHandle];
 }
 
 - (void)reloadDataHandle
 {
-    [self configUI];
     [self.titleArray removeAllObjects];
     [self.contentArray removeAllObjects];
     NSInteger num = [self dataSourceNumberItems];
@@ -99,20 +88,6 @@
     [self reloadLayout];
 }
 
-- (void)configUI
-{
-    CGFloat y = 0;
-    CGFloat h = self.topMarkHeight;
-    CGRect rect = CGRectMake(0, y, CGRectGetWidth(self.bounds), h);
-    self.topView.frame = rect;
-    [self configTopView];
-    if (!self.topViewHide) {
-        y = h;
-    }
-    rect = CGRectMake(0, y, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)-y);
-    self.bottomView.frame = rect;
-}
-
 - (void)reloadTitles
 {
     [self.titleArray removeAllObjects];
@@ -121,25 +96,6 @@
         [self.titleArray addObject:[self dataSourceTitleForIndex:i]];
     }
     [self.topView reloadData];
-}
-
-- (void)configTopView
-{
-    self.topView.titleGridView.backgroundColor = self.topMarkBGColor;
-    self.topView.titleColor = self.titleColor;
-    self.topView.titleSpacingSize = self.titleSpacingSize;
-    self.topView.topViewInset = self.topViewInset;
-    self.topView.topMarkInset = self.topMarkInset;
-    self.topView.topMarkCellInset = self.topMarkCellInset;
-    self.topView.titleSelectColor = self.titleSelectColor;
-    self.topView.topViewSidelineSize = self.topViewSidelineSize;
-    self.topView.topViewLineHeight = self.topViewLineHeight;
-    self.topView.topViewBottomLineColor = self.topViewBottomLineColor;
-    self.topView.topViewSidelineColor = self.topViewSidelineColor;
-    self.topView.titleSelectFont = self.titleSelectFont;
-    self.topView.topMarkRightView = self.topMarkRightView;
-    self.topView.titleLabelFont = self.titleLabelFont;
-    self.topView.actualTitleCell = self.actualTitleCell;
 }
 
 - (void)reloadLayout
@@ -224,12 +180,12 @@
 
 - (CGFloat)bookmarkTopView:(YBookmarkTopView *)bookmarkTopView title:(NSString *)title width:(CGFloat)width
 {
-    if (self.fixedTitleWidth) {
-        return self.fixedTitleWidth;
+    if (self.configItem.fixedTitleWidth) {
+        return self.configItem.fixedTitleWidth;
     }
-    CGFloat w = width + self.topMarkCellInset.left + self.topMarkCellInset.right;
-    if (self.maxTitleWidth) {
-        return w > self.maxTitleWidth ? self.maxTitleWidth : w;
+    CGFloat w = width + self.configItem.topMarkCellInset.left + self.configItem.topMarkCellInset.right;
+    if (self.configItem.maxTitleWidth) {
+        return w > self.configItem.maxTitleWidth ? self.configItem.maxTitleWidth : w;
     }
     return w;
 }
@@ -328,19 +284,14 @@
     [self.topView dropShadowWithOffset:offset radius:radius color:color opacity:opacity];
 }
 
-- (void)setTopShadowImage:(UIImage *)topShadowImage
-{
-    self.topView.shadowImage = topShadowImage;
-}
-
 #pragma mark -
 
 - (YBookmarkTopView *)topView
 {
     if (!_topView) {
-        _topView = [[YBookmarkTopView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), self.topMarkHeight)];
-        _topView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+        _topView = [[YBookmarkTopView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), self.configItem.topViewHeight)];
         _topView.delegate = self;
+        _topView.configItem = self.configItem;
 
     }
     return _topView;
@@ -349,10 +300,8 @@
 - (YBookmarkBottomView *)bottomView
 {
     if (!_bottomView) {
-        _bottomView = [[YBookmarkBottomView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)-self.topMarkHeight)];
-        _bottomView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        _bottomView = [[YBookmarkBottomView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)-self.configItem.topViewHeight)];
         _bottomView.delegate = self;
-        
     }
     return _bottomView;
 }
@@ -398,6 +347,14 @@
     } while (next);
     
     return nil;
+}
+
+- (YBBookMarkConfig *)configItem
+{
+    if (!_configItem) {
+        _configItem = [YBBookMarkConfig new];
+    }
+    return _configItem;
 }
 
 /*

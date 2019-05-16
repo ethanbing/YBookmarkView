@@ -24,6 +24,9 @@
 {
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
 - (void)configData
@@ -49,6 +52,12 @@
     return cell;
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.tableView reloadData];
+}
+
 
 - (UITableView *)tableView
 {
@@ -56,6 +65,7 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.backgroundColor = [UIColor whiteColor];
     }
     return _tableView;
 }

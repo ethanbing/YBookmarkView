@@ -12,6 +12,7 @@
 #import "YBSecondViewController.h"
 #import "YBThirdViewController.h"
 #import "YBMoreViewController.h"
+#import "Masonry.h"
 
 @interface YBViewController ()<YBookMarkViewDataSource,YBookMarkViewDelegate>
 
@@ -26,7 +27,13 @@
     [super viewDidLoad];
     self.title = @"YBookmarkView Demo";
     [self.view addSubview:self.bookmarkView];
-    [self.bookmarkView reloadData];
+    [self.bookmarkView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.bookmarkView reloadData];
+    });
 }
 
 - (NSInteger)numberOfItemInBookMarkView:(YBookmarkView *)bookMarkView
@@ -93,12 +100,19 @@
         _bookmarkView = [[YBookmarkView alloc] initWithFrame:self.view.frame];
         _bookmarkView.dataSource = self;
         _bookmarkView.delegate = self;
-        _bookmarkView.topMarkHeight = 50;
-        _bookmarkView.titleSelectFont = [UIFont systemFontOfSize:17];
+        [_bookmarkView configMake:^(YBBookMarkConfig *config) {
+            config.topViewHeight = 50;
+            config.titleSelectFont = [UIFont systemFontOfSize:17];
+        }];
 //        _bookmarkView.fixedTitleWidth = 100; //如果标题是固定宽度设置
         //还有很多参数可以设置，自己体会吧 😊
     }
     return _bookmarkView;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 - (void)didReceiveMemoryWarning

@@ -20,39 +20,15 @@
 
 @end
 
+@class YBBookMarkConfig;
 @interface YBookmarkTopView : UIView
 
 @property (nonatomic, weak) id <YBookmarkTopViewDelegate> delegate;
+@property (nonatomic, strong) YBBookMarkConfig *configItem;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) UIView * bottomLine;
 @property (nonatomic, strong) UICollectionView * titleGridView;
 
-//默认CGSizeMake(10, 10) */
-@property (nonatomic) CGSize titleSpacingSize;
-/** *  标题字体*/
-@property (nonatomic, strong) UIFont * titleLabelFont;
-/** *  顶部view内边距 默认UIEdgeInsetsMake(0, 0, 0, 0) */
-@property (nonatomic) UIEdgeInsets topViewInset;
-/** *  顶部Mark内边距 默认UIEdgeInsetsMake(0, 10, 0, 10) */
-@property (nonatomic) UIEdgeInsets topMarkInset;
-/** *  顶部Mark内边距 默认UIEdgeInsetsMake(0, 10, 0, 10) */
-@property (nonatomic) UIEdgeInsets topMarkCellInset;
-/** *  topMar右侧view*/
-@property (nonatomic, strong) UIView * topMarkRightView;
-/** *  标题颜色*/
-@property (nonatomic, strong) UIColor * titleColor;
-/** *  标题选中颜色*/
-@property (nonatomic, strong) UIColor * titleSelectColor;
-/** *  topView底部 滑块*/
-@property (nonatomic, assign) CGSize topViewSidelineSize;
-@property (nonatomic, strong) UIColor * topViewSidelineColor;
-/** *  topView底部分割线*/
-@property (nonatomic, assign) CGFloat topViewLineHeight;
-@property (nonatomic, strong) UIColor * topViewBottomLineColor;
-@property (nonatomic, strong) UIFont * titleSelectFont;
-/** 映射titleCell */
-@property (nonatomic, copy) NSString * actualTitleCell;
-@property (nonatomic, strong) UIImage * shadowImage;
 
 - (void)reloadData;
 

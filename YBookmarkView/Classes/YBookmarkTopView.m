@@ -9,6 +9,7 @@
 #import "YBookmarkTopView.h"
 #import "YBookmarkContentCell.h"
 #import "YBookmarkView.h"
+#import "Masonry.h"
 
 @interface YBookmarkTopView()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -40,53 +41,36 @@
 
 - (void)setupContent
 {
-    self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.bottomLine];
     [self addSubview:self.titleGridView];
     [self.titleGridView registerClass:YBookmarkTitleCell.class forCellWithReuseIdentifier:NSStringFromClass(YBookmarkTitleCell.class)];
     [self addSplitLine];
 }
 
-- (void)setTopMarkRightView:(UIView *)topMarkRightView
+- (void)configViewUI
 {
-    _topMarkRightView = topMarkRightView;
-    _topMarkRightView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-    CGRect rect = self.frame;
-//    CGFloat y = (CGRectGetHeight(rect)-CGRectGetHeight(_topMarkRightView.frame))/2.0;
-    _topMarkRightView.frame = CGRectMake(CGRectGetMaxX(rect)-CGRectGetWidth(_topMarkRightView.frame), 0, CGRectGetWidth(_topMarkRightView.frame), CGRectGetHeight(_topMarkRightView.frame)-_topViewLineHeight);
-    [self addSubview:_topMarkRightView];
-//    self.topViewInset = UIEdgeInsetsMake(0, 0, 0, self.topViewInset.right);
-}
-
-- (void)setTopViewBottomLineColor:(UIColor *)topViewBottomLineColor
-{
-    _topViewBottomLineColor = topViewBottomLineColor;
-    _bottomLine.backgroundColor = topViewBottomLineColor;
-}
-
-- (void)setTopViewSidelineSize:(CGSize)topViewSidelineSize
-{
-    _topViewSidelineSize = topViewSidelineSize;
-    _splitLine.frame = CGRectMake(0, CGRectGetHeight(self.bounds)-topViewSidelineSize.height, topViewSidelineSize.width, topViewSidelineSize.height);
-}
-
-- (void)setTopViewSidelineColor:(UIColor *)topViewSidelineColor
-{
-    _topViewSidelineColor = topViewSidelineColor;
-    _splitLine.backgroundColor = topViewSidelineColor;
-}
-
-- (void)setTopViewInset:(UIEdgeInsets)topViewInset
-{
-    _topViewInset = topViewInset;
-    self.titleGridView.frame = UIEdgeInsetsInsetRect(self.bounds, topViewInset);
-}
-
-- (void)setTopViewLineHeight:(CGFloat)topViewLineHeight
-{
-    _topViewLineHeight = topViewLineHeight;
-    self.bottomLine.frame = CGRectMake(0, CGRectGetHeight(self.frame)-topViewLineHeight, CGRectGetWidth(self.bounds), topViewLineHeight);
-//    self.topViewSidelineSize = _topViewSidelineSize;
+    UIView * rView = self.configItem.topViewRightView;
+    if (rView) {
+        [self addSubview:rView];
+        [rView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.right.bottom.mas_equalTo(0);
+            make.width.mas_equalTo(CGRectGetWidth(rView.bounds));
+        }];
+    }
+    UIEdgeInsets topInset = self.configItem.topViewInset;
+    [self.titleGridView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(topInset.top);
+        make.left.mas_equalTo(topInset.left);
+        make.right.mas_equalTo(topInset.right);
+        make.bottom.mas_equalTo(-self.configItem.topViewBottomLineHeight);
+    }];
+    [self.bottomLine mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.mas_equalTo(0);
+        make.height.mas_equalTo(self.configItem.topViewBottomLineHeight);
+    }];
+    _bottomLine.backgroundColor = self.configItem.topViewBottomLineColor;
+    _splitLine.backgroundColor = self.configItem.topMarkSidelineColor;
+    [self setupActualTitleCell];
 }
 
 - (void)addSplitLine
@@ -94,26 +78,18 @@
     [self.titleGridView addSubview:self.splitLine];
 }
 
-- (void)setTopMarkInset:(UIEdgeInsets)topMarkInset
+- (void)setupActualTitleCell
 {
-    _topMarkInset = topMarkInset;
-    self.titleGridView.contentInset = topMarkInset;
-}
-
-- (void)setActualTitleCell:(NSString *)actualTitleCell
-{
-    _actualTitleCell = actualTitleCell;
-    if (actualTitleCell.length) {
-        [self.titleGridView registerClass:NSClassFromString(actualTitleCell) forCellWithReuseIdentifier:NSStringFromClass(YBookmarkTitleCell.class)];
+    if (self.configItem.actualTitleCell.length) {
+        [self.titleGridView registerClass:NSClassFromString(self.configItem.actualTitleCell) forCellWithReuseIdentifier:NSStringFromClass(YBookmarkTitleCell.class)];
     }
 }
 
 - (void)reloadData
 {
     [self.titleGridView reloadData];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self configCurrentIndex:self.currentIndex];
-        [self splitLineToIndex:self.currentIndex];
     });
 }
 
@@ -125,6 +101,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    [self reloadData];
     for (UIView * v in self.subviews) {
         if ([v isKindOfClass:[UICollectionView class]]) {
             v.backgroundColor = [UIColor clearColor];
@@ -140,7 +117,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString * title = [self.dataArray objectAtIndex:indexPath.item];
-    CGFloat sw = [self _widthWithString:title font:self.titleSelectFont];
+    CGFloat sw = [self _widthWithString:title font:self.configItem.titleSelectFont];
     CGFloat w = [self.delegate bookmarkTopView:self title:title width:sw];
     return CGSizeMake(w, CGRectGetHeight(self.bounds));
 }
@@ -154,11 +131,8 @@
 {
     YBookmarkTitleCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(YBookmarkTitleCell.class) forIndexPath:indexPath];
     NSString * title = [self.dataArray objectAtIndex:indexPath.item];
-    cell.titleLabelFont = self.titleLabelFont;
-    cell.titleSelectFont = self.titleSelectFont;
+    cell.configItem = self.configItem;
     cell.titleLabel.text = title;
-    cell.titleColor = self.titleColor;
-    cell.titleSelectColor = self.titleSelectColor;
     if (self.delegate && [self.delegate respondsToSelector:@selector(bookmarkTopView:titleCell:index:)]) {
         [self.delegate bookmarkTopView:self titleCell:cell index:indexPath.item];
     }
@@ -200,16 +174,9 @@
     [UIView animateWithDuration:0.25 animations:^{
         [weakSelf.titleGridView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
     } completion:^(BOOL finished) {
-        [weakSelf.titleGridView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        [weakSelf.titleGridView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
         [weakSelf splitLineToIndex:indexPath.item];
     }];
-    
-//    [self.titleGridView performBatchUpdates:^{
-//        [self.titleGridView reloadItemsAtIndexPaths:@[indexPath]];
-//    } completion:^(BOOL finished) {
-//        [self.titleGridView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
-//        [self splitLineToIndex:indexPath.item];
-//    }];
 }
 
 - (void)splitLineToIndex:(CGFloat)index
@@ -223,23 +190,20 @@
     if (toIndex < 0 || toIndex >= self.dataArray.count) {
         return;
     }
-    UICollectionViewCell * cell = [self.titleGridView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:toIndex inSection:0]];
-    CGPoint p = self.splitLine.center;
-    if (self.topViewSidelineSize.width == 0) {
-        CGRect rect = self.splitLine.frame;
-        CGFloat cellW = CGRectGetWidth(cell.bounds);
-        CGFloat w = cellW - self.titleSpacingSize.width*2;
-        rect.size.width = w;
-        self.splitLine.frame = rect;
-    }else if ([cell isKindOfClass:[YBookmarkTitleCell class]]) {
-        CGRect rect = self.splitLine.frame;
-        YBookmarkTitleCell * tempCell = (YBookmarkTitleCell*)cell;
-        rect.size.width = [self currentWidthWithFont:tempCell.titleSelectFont text:tempCell.titleLabel.text];
-        self.splitLine.frame = rect;
-    }
-//    [UIView animateWithDuration:0.1 animations:^{
-        self.splitLine.center = CGPointMake(CGRectGetMidX(cell.frame), p.y);
-//    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UICollectionViewCell * cell = [self.titleGridView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:toIndex inSection:0]];
+        CGRect rect = cell.frame;
+        rect.size.height = 2;
+        
+        if (self.configItem.topMarkSidelineSize.width) {
+            rect.size = self.configItem.topMarkSidelineSize;
+        }
+        rect.origin.y = CGRectGetHeight(self.bounds)-rect.size.height;
+        [self.splitLine.layer removeAllAnimations];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.splitLine.frame = rect;
+        }];
+    });
 }
 
 - (void)setShadowImage:(UIImage *)shadowImage
@@ -288,7 +252,6 @@
 //        flow.itemSize = UICollectionViewFlowLayoutAutomaticSize;
         flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _titleGridView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flow];
-        _titleGridView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _titleGridView.showsHorizontalScrollIndicator = NO;
         _titleGridView.pagingEnabled = NO;
         _titleGridView.scrollsToTop = NO;
@@ -311,7 +274,6 @@
     if (!_splitLine){
         _splitLine = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds)-2, 50, 2)];
         _splitLine.backgroundColor = [UIColor redColor];
-        _splitLine.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     }
     return _splitLine;
 }

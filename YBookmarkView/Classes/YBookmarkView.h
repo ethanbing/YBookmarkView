@@ -10,6 +10,7 @@
 #import "YBookmarkContentCell.h"
 #import "YBookmarkTopView.h"
 #import "YBookmarkBottomView.h"
+#import "YBBookMarkConfig.h"
 
 @class YBookmarkView;
 @protocol YBookMarkViewDataSource <NSObject>
@@ -83,52 +84,15 @@
 @property (nonatomic, weak) id<YBookMarkViewDelegate> delegate;
 @property (nonatomic, strong) YBookmarkTopView *topView;
 @property (nonatomic, strong) YBookmarkBottomView * bottomView;
-/** *  是否隐藏topView 默认NO */
-@property (nonatomic, assign) BOOL topViewHide;
-/** *  顶部Mark高度  默认50.0 */
-@property (nonatomic, assign) CGFloat topMarkHeight;
-@property (nonatomic, assign) CGFloat bottomMarkHeight;
-/** *  顶部Mark背景色  默认白色 */
-@property (nonatomic, strong) UIColor * topMarkBGColor;
-/** *  最大标题宽度 */
-@property (nonatomic, assign) CGFloat maxTitleWidth;
-/** *  固定标题宽度 默认0 自动宽度*/
-@property (nonatomic, assign) CGFloat fixedTitleWidth;
-/** *  title 最小间距 (minimumLineSpacing,minimumInteritemSpacing)
- 默认CGSizeMake(10, 10) */
-@property (nonatomic) CGSize titleSpacingSize;
-/** *  标题字体*/
-@property (nonatomic, strong) UIFont * titleLabelFont;
-/** *  顶部view内边距 默认UIEdgeInsetsMake(0, 0, 0, 0) */
-@property (nonatomic) UIEdgeInsets topViewInset;
-/** *  顶部Mark内边距 默认UIEdgeInsetsMake(0, 10, 0, 10) */
-@property (nonatomic) UIEdgeInsets topMarkInset;
-/** *  顶部Mark内边距 默认UIEdgeInsetsMake(0, 10, 0, 10) */
-@property (nonatomic) UIEdgeInsets topMarkCellInset;
-/** *  顶部的Mark滚动手势激活  默认 YES 激活 */
-@property (nonatomic, assign) BOOL topMarkScrollEnabled;
-/** *  下面的Mark滚动手势激活  默认 YES 激活 */
-@property (nonatomic, assign) BOOL bottomMarkScrollEnabled;
-/** *  topMar右侧view*/
-@property (nonatomic, strong) UIView * topMarkRightView;
+
 /** *  当前索引 */
 @property (nonatomic, assign) NSInteger currentIndex;
-/** *  标题颜色*/
-@property (nonatomic, strong) UIColor * titleColor;
-/** *  标题选中颜色*/
-@property (nonatomic, strong) UIColor * titleSelectColor;
-/** *  topView底部 滑块   topViewSidelineSize 宽度设置0  就是自动宽度*/
-@property (nonatomic, assign) CGSize topViewSidelineSize;
-@property (nonatomic, strong) UIColor * topViewSidelineColor;
-/** *  topView底部分割线*/
-@property (nonatomic, assign) CGFloat topViewLineHeight;
-@property (nonatomic, strong) UIColor * topViewBottomLineColor;
-@property (nonatomic, strong) UIFont * titleSelectFont;
 
-/** 映射titleCell 就是继承YBookmarkTitleCell 的类名 */
-@property (nonatomic, copy) NSString * actualTitleCell;
-@property (nonatomic, strong) UIImage * topShadowImage;
-
+/**
+ 配置bookmark参数
+ @param block 回调
+ */
+- (void)configMake:(void(^)(YBBookMarkConfig * config))block;
 /**
  *  赋完值后  必须刷新数据
  */

@@ -7,12 +7,17 @@
 //
 
 #import "YBookmarkContentCell.h"
+#import "YBBookMarkConfig.h"
+#import "Masonry.h"
 
 @implementation YBookmarkContentCell
 
 - (void)updateDataForVC:(UIViewController *)vc
 {
     [self.contentView addSubview:vc.view];
+    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView);
+    }];
     [self.topVC addChildViewController:vc];
     _topVC = vc;
 }
@@ -37,25 +42,16 @@
         self.backgroundColor = [UIColor clearColor];
         self.contentView.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.titleLabel];
+        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
+        }];
     }
     return self;
 }
 
-- (void)setTitleColor:(UIColor *)titleColor
-{
-    _titleColor = titleColor;
-    _titleLabel.textColor = titleColor;
-}
-
-- (void)setTitleLabelFont:(UIFont *)titleLabelFont
-{
-    _titleLabelFont = titleLabelFont;
-    _titleLabel.font = titleLabelFont;
-}
-
 - (CGFloat)scaleFont
 {
-    return self.titleSelectFont.xHeight / self.titleLabelFont.xHeight;
+    return self.configItem.titleSelectFont.xHeight / self.configItem.titleLabelFont.xHeight;
 }
 
 - (void)setSelected:(BOOL)selected
@@ -64,7 +60,7 @@
     CGFloat scale = [self scaleFont];
 //    Weak_Self
     if (selected) {
-        self.titleLabel.textColor = self.titleSelectColor;
+        self.titleLabel.textColor = self.configItem.titleSelectColor;
 //        _titleLabel.font = self.titleSelectFont;
         if (scale == 1) {
             return;
@@ -73,7 +69,7 @@
             self.titleLabel.transform = CGAffineTransformMakeScale(scale, scale);
         }];
     }else{
-        self.titleLabel.textColor = self.titleColor;
+        self.titleLabel.textColor = self.configItem.titleColor;
 //        _titleLabel.font = self.titleLabelFont;
         if (scale == 1) {
             return;
@@ -90,7 +86,6 @@
         _titleLabel = [[UILabel alloc] initWithFrame:self.contentView.bounds];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }
     return _titleLabel;
 }

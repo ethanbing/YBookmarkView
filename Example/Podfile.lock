@@ -1,16 +1,23 @@
 PODS:
-  - YBookmarkView (0.1.0)
+  - Masonry (1.1.0)
+  - YBookmarkView (0.1.1):
+    - Masonry
 
 DEPENDENCIES:
   - YBookmarkView (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Masonry
 
 EXTERNAL SOURCES:
   YBookmarkView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  YBookmarkView: 3e5c7d68ca7d5d307faca68a85d56a4240ddef4e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YBookmarkView: 11640a3b80f5832f14b5eb17bee8be1c5f22c10d
 
 PODFILE CHECKSUM: 27b55b44a677f23bdfab1cc8be3c4e5b78c1d588
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.3
